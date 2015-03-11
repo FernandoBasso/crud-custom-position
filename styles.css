@@ -1,0 +1,34 @@
+.cf:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+body {
+    width: 800px;
+    margin: 0 auto;
+    font-family: 'Anonymous Pro', 'Ubuntu', 'Dejavu Serif', 'Courier 10 Pitch';
+    font-size: 16px;
+}
+nav ul li {
+    list-style: none;
+    float: left;
+}
+nav ul a {
+    display: block;
+    padding: 10px;
+}
+form input, form select {
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-size: inherit;
+}
+form [name^='id'], form [name^='pos'] {
+    width: 25px;
+    text-align: center;
+}
+form [name^=title] {
+    width: 300px;
+}
+
