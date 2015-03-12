@@ -18,16 +18,23 @@
 </nav>
 
 <section class='list'>
-<?php foreach ( $posts AS $post ): ?>
-    <form method='POST' action='./?action=update'>
-        <input type='text' name='id' value='<?= $post->id; ?>' readonly>
-        <input type='text' name='pos' value='<?= $post->pos; ?>'>
-        <input type='text' name='title' value='<?= $post->title; ?>'>
-        <input type='submit' value='Update'>
-        <a href='?action=destroy&id=<?= $post->id; ?>'>Remove</a>
-    </form>
-<?php endforeach; ?>
-</section>
+<?php
+if ( isset( $posts ) ):
+    foreach ( $posts AS $post ): ?>
+        <form method='POST' action='./?action=update'>
+            <input type='hidden' name='category_id' value='<?= $post->category_id; ?>'>
+            <input type='text' name='id' value='<?= $post->id; ?>' readonly>
+            <input type='text' name='pos' value='<?= $post->pos; ?>'>
+            <input type='text' name='title' value='<?= $post->title; ?>'>
+            <input type='submit' value='Update'>
+            <a href='?action=destroy&id=<?= $post->id; ?>'>Remove</a>
+        </form>
+<?php
+    endforeach;
+endif;
+?>
+
+    </section>
 
 <p>Insert a new one:</p>
 <form method='POST' action='./?action=insert' class='insert'>
